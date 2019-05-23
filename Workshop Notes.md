@@ -1,12 +1,12 @@
 Thursday, May 23, 2019
 
-Lecture 1:
+Lecture 1 (Rendering):
 React - describe a UI
 ReactDOM - makes the UI
 react-icons library - import { FaHome } from 'react-icons/fa';
 Pass in component rather than component name to pass in props with the component
 
-Lecture 2:
+Lecture 2 (State):
 UI = f(state)
 useState
 - First item gives actually value (value)
@@ -44,3 +44,26 @@ function renderPhonyHooks() {
   callCount = -1
   ReactDOM.render(...)
 }
+
+Lecture 4 (Effects):
+
+Side effect -> useEffect
+- Lets us think in terms of state.
+- Always runs on initial render.
+- Start to think of them as a new primitive.
+- Way to capture some behavior
+- Anything that is "not update the UI"
+
+Used to think in terms of events and how to update the DOM when text box text changes
+- Need to identify events/initial page load
+
+Think in state vs events
+
+Ref
+- createREf
+- ref="someString"
+- ref={...}
+- useRef
+  - Keeps a reference to an object, most of the time it's a DOM element
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
