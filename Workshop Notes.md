@@ -66,4 +66,22 @@ Ref
 - useRef
   - Keeps a reference to an object, most of the time it's a DOM element
 
+Lecture 5 (Data loading):
+
+useEffect
+- Remember second argument
+  - When does it need to rerun?
+- Cleanup during async work
+  - Don't set state when component is gone. Can set a variable.
+  - Need to tell React how to cleanup the effect during async calls.
+
+1. Initializing some state
+2. Subscribing to posts
+3. When we unmount, unsubscribe from posts
+4. When the uid changes,
+  - Unsubscribe from the last uid
+  - Re-subscribe with the new uid
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Friday, May 24, 2019

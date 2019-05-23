@@ -491,3 +491,38 @@ export default function Avatar({ uid, size = 50, bg, className, ...rest }) {
 //     return this.props.children(this.state.posts)
 //   }
 // }
+
+// Render props
+// 1. Initializing some state
+// 2. Subscribing to posts
+// 3. When we unmount, unsubscribe from posts
+// 4. When the uid changes,
+//   - Unsubscribe from the last uid
+//   - Re-subscribe with the new uid
+class Posts extends React.Component {
+  state = { posts: null }
+  subscribe() {
+    this.unsubscribe = subscribeToPosts(this.props.uid, posts => {
+      this.setState({ posts });
+    })
+  }
+
+  componentDidMount() {
+    this.subscribe();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.uid !== this.props.uid) {
+      this.unsubscribe();
+      this.subscribe();
+    }
+  }
+
+  componentWillUnmount() {
+    this.unsubscribe();
+  }
+
+  render() {
+    return this.props.children(this.state.props);
+  }
+}
