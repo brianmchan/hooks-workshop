@@ -115,3 +115,15 @@ Context
 
 Variable shadowing
 - Passing context props down to children
+
+Lecutre 8 (App State)
+
+Advantages of using a reducer (useReducer hook)
+1. Manage all of our state together, instead of separately
+2. Group changes together
+3. "Product speak"
+
+Dispatch is responsible for running reducer to get to the next state.
+
+useReducer
+- "Fancy" useState
