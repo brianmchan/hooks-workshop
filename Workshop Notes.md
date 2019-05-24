@@ -127,3 +127,21 @@ Dispatch is responsible for running reducer to get to the next state.
 
 useReducer
 - "Fancy" useState
+
+
+Lecture 10 - building the feed
+
+First Feature
+  - Loads in the set of posts
+  - Fetch posts and set state
+Second Feature
+  - View more posts button
+Third feature
+  - Subscribed to the new posts that have come in
+Fourth feature
+  - Get new posts
+
+// synchronize with
+useEffect(effect) // all state
+useEffect(effect, []) // no state
+useEffect(effect, [these, states])
