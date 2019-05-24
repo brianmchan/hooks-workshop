@@ -82,6 +82,36 @@ useEffect
   - Unsubscribe from the last uid
   - Re-subscribe with the new uid
 
+Main trade-off with Hooks
+- Used to need to know (React land)
+  - classes
+  - instances
+  - constructors
+  - super
+  - this
+  - method binding
+- Now we need to know (Hooks land)
+  - functions
+  - scope
+  - arguments
+  - return
+  - closures
+- Can group together related states
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Friday, May 24, 2019
+
+Lecture 7 (Compound Components)
+
+Build out single component, then only when it becomes obvious, break it up into different components.
+
+Context
+- Communication channel
+- Not stateful
+- Like a conveyor belt
+- If state changes, then can convey down the path about the changes.
+- Keep components in same file (can cause too many imports) or at least same directory since they are all related.
+
+Variable shadowing
+- Passing context props down to children
