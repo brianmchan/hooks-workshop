@@ -6,6 +6,7 @@ ReactDOM - makes the UI
 react-icons library - import { FaHome } from 'react-icons/fa';
 Pass in component rather than component name to pass in props with the component
 
+
 Lecture 2 (State):
 UI = f(state)
 useState
@@ -45,6 +46,7 @@ function renderPhonyHooks() {
   ReactDOM.render(...)
 }
 
+
 Lecture 4 (Effects):
 
 Side effect -> useEffect
@@ -65,6 +67,7 @@ Ref
 - ref={...}
 - useRef
   - Keeps a reference to an object, most of the time it's a DOM element
+
 
 Lecture 5 (Data loading):
 
@@ -116,6 +119,7 @@ Context
 Variable shadowing
 - Passing context props down to children
 
+
 Lecutre 8 (App State)
 
 Advantages of using a reducer (useReducer hook)
@@ -145,3 +149,47 @@ Fourth feature
 useEffect(effect) // all state
 useEffect(effect, []) // no state
 useEffect(effect, [these, states])
+
+
+Lecture 11 - Animation
+
+React-spring library
+
+const id = setTimeout(() => {}, 200)
+return () => clearTimeout(id)
+
+
+Lecture 12 - Optimization/Performance
+
+Idea of React
+const oldEl = Calendar()
+
+// set state
+const newEl = Calendar() // always fast
+
+const diff = compare(oldEl, newEl) // pretty much always fast
+
+commit(diff)  // would be slow w/o the diff
+
+Timing how long code takes:
+console.time('calculateWeeks')
+console.timeEnd('calculateWeeks')
+
+useMemo
+- Only recalculate if variables change in second argument array
+- useMemo vs useEffect
+  - Has return value that means calculate this for me
+  - useEffect - calculate this arbitrary code later
+
+How to find performance issues?
+- React DevTools profiler tab
+  - Use your app with the tab open to record data
+  - Can help you identify things that are slow.
+  - Profiler shows different colors for bottlenecks (i.e. red color)
+
+{ memo } from React
+- wrap function into memo
+- Diff two props rather than two whole element trees
+
+useCallback
+- Shortcut for useMemo
